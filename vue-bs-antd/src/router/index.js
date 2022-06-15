@@ -1,0 +1,10 @@
+import { createWebHistory, createRouter } from "vue-router";
+import admin from "./admin";
+
+const routes = [...admin];
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+export default router;
