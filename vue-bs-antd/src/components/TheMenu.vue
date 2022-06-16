@@ -1,14 +1,15 @@
 <script>
-import { reactive, toRefs } from 'vue';
+import { storeToRefs } from "pinia";
+import { useMenu } from "../stores/useMenu";
+import { UserOutlined } from "@ant-design/icons-vue";
 export default {
+  components: {
+    UserOutlined,
+  },
   setup() {
-    const state = reactive({
-      selectedKeys: ['admin-users'],
-      openKeys: [],
-    });
-
+    const menuStore = useMenu();
     return {
-      ...toRefs(state),
+      ...storeToRefs(menuStore),
     };
   },
 };
@@ -22,7 +23,7 @@ export default {
   >
     <a-menu-item key="admin-users">
       <router-link :to="{ name: 'admin-users' }">
-        <span>Tài khoản</span>
+        <span> <UserOutlined /> Tài khoản</span>
       </router-link>
     </a-menu-item>
     <a-menu-item key="admin-roles">

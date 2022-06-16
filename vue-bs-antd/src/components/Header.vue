@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
+import TheMenu from "./TheMenu.vue";
 
 const visible = ref(false);
 const visibleUser = ref(false);
@@ -49,21 +50,11 @@ const showDrawerUser = () => {
     </div>
   </div>
 
-  <a-drawer
-    v-model:visible="visible"
-    title="DANH MỤC"
-    placement="left"
-  >
-    <p>Some contents...</p>
-    <p>Some contents...</p>
-    <p>Some contents...</p>
+  <a-drawer v-model:visible="visible" title="DANH MỤC" placement="left">
+    <TheMenu />
   </a-drawer>
 
-  <a-drawer
-    v-model:visible="visibleUser"
-    title="ADMIN"
-    placement="right"
-  >
+  <a-drawer v-model:visible="visibleUser" title="ADMIN" placement="right">
     <p>Some contents...</p>
     <p>Some contents...</p>
     <p>Some contents...</p>
