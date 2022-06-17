@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import { MenuOutlined } from "@ant-design/icons-vue";
 import TheMenu from "./TheMenu.vue";
 
 const visible = ref(false);
@@ -23,7 +24,7 @@ const showDrawerUser = () => {
       <div
         class="col-1 d-flex d-sm-none align-items-center justify-content-center"
       >
-        <span @click="showDrawer">X</span>
+        <span @click="showDrawer"><MenuOutlined /></span>
       </div>
       <div
         class="col-10 d-flex align-items-center justify-content-center justify-content-sm-start col-sm-9"

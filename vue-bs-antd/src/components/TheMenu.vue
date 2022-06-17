@@ -1,10 +1,16 @@
 <script>
 import { storeToRefs } from "pinia";
 import { useMenu } from "../stores/useMenu";
-import { UserOutlined } from "@ant-design/icons-vue";
+import {
+  UserOutlined,
+  TagOutlined,
+  SettingOutlined,
+} from "@ant-design/icons-vue";
 export default {
   components: {
     UserOutlined,
+    TagOutlined,
+    SettingOutlined,
   },
   setup() {
     const menuStore = useMenu();
@@ -23,24 +29,18 @@ export default {
   >
     <a-menu-item key="admin-users">
       <router-link :to="{ name: 'admin-users' }">
-        <span> <UserOutlined /> Tài khoản</span>
+        <span> <UserOutlined class="me-1" /> Tài khoản</span>
       </router-link>
     </a-menu-item>
     <a-menu-item key="admin-roles">
       <router-link :to="{ name: 'admin-roles' }">
-        <span>Vai trò</span>
+        <span> <TagOutlined class="me-1" /> Vai trò</span>
       </router-link>
     </a-menu-item>
     <a-menu-item key="admin-settings">
       <router-link :to="{ name: 'admin-settings' }">
-        <span>Cài đặt</span>
+        <span> <SettingOutlined class="me-1" /> Cài đặt</span>
       </router-link>
     </a-menu-item>
   </a-menu>
 </template>
-
-<style>
-a {
-  text-decoration: none;
-}
-</style>
